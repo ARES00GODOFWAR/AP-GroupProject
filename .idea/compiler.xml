@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AP-APP-FE" target="17" />
+      <module name="AP-APP-FE" target="15.0.1" />
     </bytecodeTargetLevel>
   </component>
 </project>
