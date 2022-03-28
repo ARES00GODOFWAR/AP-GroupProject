@@ -1,0 +1,43 @@
+.sidebar{
+    -fx-background-color: #334155;
+}
+
+.sidebar-header{
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+}
+
+.container{
+    -fx-background-color: #E5E5E5;
+}
+
+.chat-btn{
+    -fx-background-color: white;
+    -fx-border-color: #334155;
+    -fx-border-radius: 5;
+}
+
+.dashboard-sidebar-link{
+    -fx-background-color: white;
+    -fx-color: #334155;
+}
+
+.paymentStatus-Container{
+    -fx-background-color: white;
+    -fx-border-radius: 5;
+}
+
+.make-complaint-btn{
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+}
+
+.make-query-btn{
+    -fx-text-fill: #334155;
+    -fx-background-color: white;
+    -fx-border-color: #334155;
+    -fx-border-radius: 5;
+}
+
+

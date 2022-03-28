@@ -19,7 +19,6 @@ public class Main extends Application {
         Parent root;
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login.fxml")));
         root.getStylesheets().add(getClass().getResource("stylesheets/login.css").toExternalForm());
-       // Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         primaryStage.setTitle("MicroStarCable");
         primaryStage.setScene(new Scene(root,600,400));
         primaryStage.show();
