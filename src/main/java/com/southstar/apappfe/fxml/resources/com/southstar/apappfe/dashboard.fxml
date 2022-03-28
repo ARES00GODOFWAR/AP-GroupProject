@@ -9,44 +9,48 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="709.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.southstar.apappfe.controllers.DashboardController">
    <children>
       <Pane prefHeight="709.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@stylesheets/dashboard.css">
          <children>
-            <Button layoutY="87.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Dashboard" />
-            <Button layoutY="135.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Complaints" />
+            <Button layoutY="87.0" mnemonicParsing="false" prefHeight="38.0"  prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Dashboard" />
+            <Button fx:id="cBtn" layoutY="135.0" mnemonicParsing="false" onAction="#openComplaints" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Complaints" />
             <Button layoutY="181.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" layoutX="222.0" layoutY="24.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="sidebar-header" width="726.0" />
-      <Label layoutX="234.0" layoutY="45.0" text="Micro-Star CableVision">
-         <font>
-            <Font name="Open Sans Semibold" size="16.0" />
-         </font>
-      </Label>
-      <TextField layoutX="585.0" layoutY="38.0" prefHeight="35.0" prefWidth="213.0" promptText="Search">
-         <font>
-            <Font name="Open Sans" size="12.0" />
-         </font>
-      </TextField>
-      <Button layoutX="823.0" layoutY="38.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="chat-btn" stylesheets="@stylesheets/dashboard.css" text="Chat" textFill="#334155">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="304.0" layoutX="215.0" layoutY="115.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="paymentStatus-Container" width="726.0" />
-      <Circle fill="#c9c9c9" layoutX="584.0" layoutY="167.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
-      <Label layoutX="489.0" layoutY="217.0" text="Payment Status">
-         <font>
-            <Font size="26.0" />
-         </font>
-      </Label>
-      <Label layoutX="554.0" layoutY="264.0" text="Pending">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Button layoutX="410.0" layoutY="329.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" styleClass="make-complaint-btn" stylesheets="@stylesheets/dashboard.css" text="Make Complaint" />
-      <Button layoutX="612.0" layoutY="329.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" styleClass="make-query-btn" stylesheets="@stylesheets/dashboard.css" text="Make Query" />
+      <Pane fx:id="contentPane" layoutX="200.0" prefHeight="709.0" prefWidth="772.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="314.0" layoutX="23.0" layoutY="108.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="paymentStatus-Container" width="726.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" layoutX="23.0" layoutY="22.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="sidebar-header" width="726.0" />
+            <Label layoutX="43.0" layoutY="43.0" text="Micro-Star CableVision">
+               <font>
+                  <Font name="Open Sans Semibold" size="16.0" />
+               </font>
+            </Label>
+            <TextField layoutX="386.0" layoutY="36.0" prefHeight="35.0" prefWidth="213.0" promptText="Search">
+               <font>
+                  <Font name="Open Sans" size="12.0" />
+               </font>
+            </TextField>
+            <Button layoutX="638.0" layoutY="36.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="chat-btn" stylesheets="@stylesheets/dashboard.css" text="Chat" textFill="#334155">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="297.0" layoutY="204.0" text="Payment Status">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Circle fill="#c9c9c9" layoutX="386.0" layoutY="160.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
+            <Label layoutX="355.0" layoutY="242.0" text="Pending">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="218.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#openComplaints"  styleClass="make-complaint-btn" stylesheets="@stylesheets/dashboard.css" text="Make Complaint" />
+            <Button layoutX="413.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#openQuery" styleClass="make-query-btn" stylesheets="@stylesheets/dashboard.css" text="Make Query" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -18,15 +18,16 @@
 }
 
 .dashboard-sidebar-link{
-    -fx-background-color: white;
-    -fx-text-fill: #334155;
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
     -fx-background-radius: 0;
 }
 
 .complaint-sidebar-link{
-    -fx-background-color: #334155;
-    -fx-text-fill: white;
+    -fx-background-color: white;
+    -fx-text-fill: #334155;
     -fx-background-radius: 0;
+
 }
 
 .payment-sidebar-link{

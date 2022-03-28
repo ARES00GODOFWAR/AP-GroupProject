@@ -13,7 +13,7 @@
    <children>
       <Pane prefHeight="709.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@stylesheets/dashboard.css">
          <children>
-            <Button layoutY="87.0" mnemonicParsing="false" prefHeight="38.0"  prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Dashboard" />
+            <Button layoutY="87.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Dashboard" />
             <Button fx:id="cBtn" layoutY="135.0" mnemonicParsing="false" onAction="#openComplaints" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Complaints" />
             <Button layoutY="181.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
          </children>
@@ -49,7 +49,7 @@
                </font>
             </Label>
             <Button layoutX="218.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#openComplaints"  styleClass="make-complaint-btn" stylesheets="@stylesheets/dashboard.css" text="Make Complaint" />
-            <Button layoutX="413.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#openQuery" styleClass="make-query-btn" stylesheets="@stylesheets/dashboard.css" text="Make Query" />
+            <Button layoutX="413.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" styleClass="make-query-btn" stylesheets="@stylesheets/dashboard.css" text="Make Query" />
          </children>
       </Pane>
    </children>

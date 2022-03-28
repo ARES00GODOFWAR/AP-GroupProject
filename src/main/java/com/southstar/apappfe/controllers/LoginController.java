@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
-public class Login {
+public class LoginController {
 
     @FXML
     private TextField Id;
@@ -27,7 +27,6 @@ public class Login {
         URL styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/stylesheets/dashboard.css").toURI().toURL();
         Parent HomePage = FXMLLoader.load(url);
         HomePage.getStylesheets().add(String.valueOf(styleUrl));
-
         Scene HomeScene = new Scene(HomePage);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(HomeScene);
