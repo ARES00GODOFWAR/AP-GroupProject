@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -14,16 +16,18 @@
          </font>
       </Text>
       <Text layoutX="92.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fill out the Information below to log into Account" />
-      <TextField layoutX="93.0" layoutY="145.0" prefHeight="45.0" prefWidth="414.0" promptText="ID Number">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </TextField>
-      <TextField layoutX="92.0" layoutY="212.0" prefHeight="45.0" prefWidth="414.0" promptText="Password">
+      <TextField fx:id="Id" layoutX="93.0" layoutY="145.0" prefHeight="45.0" prefWidth="414.0" promptText="ID Number">
          <font>
             <Font size="10.0" />
          </font>
       </TextField>
       <Button layoutX="229.0" layoutY="290.0" lineSpacing="20.0" mnemonicParsing="false" onAction="#login" prefHeight="45.0" prefWidth="139.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Sign In" textFill="WHITE" />
+      <Hyperlink layoutX="282.0" layoutY="257.0" onAction="#handleSignUp" text="If you dont have a account, Sign up here" />
+      <PasswordField fx:id="Password" layoutX="92.0" layoutY="212.0" prefHeight="45.0" prefWidth="414.0" promptText="Password" />
+      <Text fx:id="invalidPrompt" fill="#e11313" layoutX="102.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Id number or  password" visible="false">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
