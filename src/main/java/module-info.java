@@ -1,6 +1,6 @@
 module com.southstar.apappfe {
-    requires javafx.controls;
     requires javafx.fxml;
+    requires javafx.controls;
 
 
     opens com.southstar.apappfe to javafx.fxml;
