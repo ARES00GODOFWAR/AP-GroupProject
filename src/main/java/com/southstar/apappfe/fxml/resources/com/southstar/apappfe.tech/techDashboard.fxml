@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.southstar.apappfe.controllers.ComplaintController">
+    <children>
+        <Pane prefHeight="773.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@stylesheets/dashboard.css">
+            <children>
+                <Button fx:id="cBtn" layoutY="97.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Dashboard" />
+            </children>
+        </Pane>
+        <Pane fx:id="contentPane" layoutX="200.0" prefHeight="774.0" prefWidth="772.0">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" layoutX="23.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="sidebar-header" width="726.0" />
+                <Label layoutX="35.0" layoutY="35.0" text="Micro-Star CableVision">
+                    <font>
+                        <Font name="Open Sans Semibold" size="16.0" />
+                    </font>
+                </Label>
+                <TextField layoutX="386.0" layoutY="29.0" prefHeight="35.0" prefWidth="213.0" promptText="Search">
+                    <font>
+                        <Font name="Open Sans" size="12.0" />
+                    </font>
+                </TextField>
+                <Button layoutX="638.0" layoutY="29.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="83.0" styleClass="chat-btn" stylesheets="@stylesheets/dashboard.css" text="Chat" textFill="#334155">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="460.0" layoutX="23.0" layoutY="101.0" stroke="WHITE" strokeType="INSIDE" width="726.0" />
+                <Label layoutX="46.0" layoutY="134.0" text="Technicians Customer Complaints">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="46.0" layoutY="171.0" text="Below we have a list of current and past complaints" />
+                <TableView layoutX="46.0" layoutY="243.0" prefHeight="200.0" prefWidth="659.0">
+                    <columns>
+                        <TableColumn prefWidth="110.0" text="Customer ID" />
+                        <TableColumn prefWidth="94.0" text="Name" />
+                        <TableColumn prefWidth="81.0" text="Number" />
+                  <TableColumn prefWidth="91.0" text="Issue type" />
+                  <TableColumn prefWidth="130.0" text="Service address" />
+                  <TableColumn prefWidth="152.0" text="Issue Details" />
+                    </columns>
+                </TableView>
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
