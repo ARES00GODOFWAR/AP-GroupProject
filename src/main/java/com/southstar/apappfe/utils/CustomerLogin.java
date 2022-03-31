@@ -1,7 +1,13 @@
 package com.southstar.apappfe.utils;
 
-public class CustomerLogin {
+import com.southstar.apappfe.models.Customer;
 
+import java.io.Serial;
+import java.io.Serializable;
+
+public class CustomerLogin implements Serializable {
+    @Serial
+    private static  final long serialVersionUID=1;
     private String id;
     private String password;
 
@@ -26,13 +32,22 @@ public class CustomerLogin {
         this.password = password;
     }
 
-    public boolean login(CustomerLogin customerLogin) {
+    public Customer login(CustomerLogin customerLogin) {
         Client client = new Client();
         client.sendAction("/CustomerLogin");
         client.sendCustomerLoginInfo(customerLogin);
-        Boolean loginFlag = (Boolean) client.receiveResponse();
+        Customer customer = (Customer) client.receiveResponse();
         client.closeConnection();
-        return loginFlag;
+        return customer;
 
+
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerLogin{" +
+                "id='" + id + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.southstar.apappfe.utils;
 
+import com.southstar.apappfe.models.Customer;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ public class Client {
     }
     private void createConnection(){
         try{
-            socket = new Socket("127.0.0.1",8080);
+            socket = new Socket("127.0.0.1",2000);
 
         }catch (IOException e){
             e.printStackTrace();
@@ -63,10 +64,22 @@ public class Client {
             e.printStackTrace();
         }
     }
+    public void sendCustomer(Customer customer){
+        try {
+            objectOutputStream.writeObject(customer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public Object receiveResponse(){
         try{
-            if(action.equalsIgnoreCase("/CustomerLogin")){
+            if(action.equals("/CustomerLogin")){
+                System.out.println("Reacher logined");
                return objectInputStream.readObject();
+            }
+            if(action.equals("/AddCustomer")){
+                System.out.println("Customer added");
+                return objectInputStream.readObject();
             }
 
         } catch (IOException | ClassNotFoundException e) {

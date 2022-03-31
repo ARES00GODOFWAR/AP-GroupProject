@@ -1,5 +1,6 @@
 package com.southstar.apappfe.controllers;
 
+import com.southstar.apappfe.models.Customer;
 import com.southstar.apappfe.utils.CustomerLogin;
 import com.southstar.apappfe.utils.Validator;
 import javafx.event.ActionEvent;
@@ -35,21 +36,26 @@ public class LoginController {
         String password_holder = Password.getCharacters().toString();
          if(!id_holder.isEmpty() && !password_holder.isEmpty()) {
              if(Validator.containsOnlyNumbers(id_holder)) {
+
                  System.out.println("good");
-//                 CustomerLogin customerLogin = new CustomerLogin(id_holder,password_holder);
-//                 boolean flag = customerLogin.login(customerLogin);
-//                 if(flag){
-//                     URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/dashboard.fxml").toURI().toURL();
-//                     URL styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/stylesheets/dashboard.css").toURI().toURL();
-//                     Parent HomePage = FXMLLoader.load(url);
-//                     HomePage.getStylesheets().add(String.valueOf(styleUrl));
-//                     Scene HomeScene = new Scene(HomePage);
-//                     Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-//                     window.setScene(HomeScene);
-//                     window.show();
+                 CustomerLogin customerLogin = new CustomerLogin(id_holder,password_holder);
+                 Customer customer = customerLogin.login(customerLogin);
+                 System.out.println("reach");
+
+                 if(customer!=null){
+                     System.out.println("Customer Id: "+customer.getCustomerId());
+                     URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/dashboard.fxml").toURI().toURL();
+                     URL styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/stylesheets/dashboard.css").toURI().toURL();
+                     Parent HomePage = FXMLLoader.load(url);
+                     HomePage.getStylesheets().add(String.valueOf(styleUrl));
+                     Scene HomeScene = new Scene(HomePage);
+                     Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                     window.setScene(HomeScene);
+                     window.show();
+                     }else{
+                     System.out.println("Incorrect info");
                  }
-
-
+                 }
 
          }else{
              invalidPrompt.setVisible(true);
