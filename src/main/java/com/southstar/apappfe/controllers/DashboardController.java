@@ -24,15 +24,22 @@ public class DashboardController {
 
     @FXML
     private void openComplaints(ActionEvent event) throws IOException {
-        System.out.println("This works");
+
+        URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/listOfComplaints.fxml").toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        contentPane.getScene().setRoot(root);
+    }
+    @FXML
+    private void makeComplaints(ActionEvent event) throws IOException {
         URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/complaintPage.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         contentPane.getScene().setRoot(root);
     }
 
+
     @FXML
     private void openQuery(ActionEvent event) throws IOException {
-        System.out.println("This works");
+
         URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/Query.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         contentPane.getScene().setRoot(root);

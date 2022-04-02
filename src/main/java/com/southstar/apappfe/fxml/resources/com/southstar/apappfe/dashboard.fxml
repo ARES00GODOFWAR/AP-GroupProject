@@ -48,7 +48,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Button layoutX="218.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#openComplaints"  styleClass="make-complaint-btn" stylesheets="@stylesheets/dashboard.css" text="Make Complaint" />
+            <Button layoutX="218.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#makeComplaints"  styleClass="make-complaint-btn" stylesheets="@stylesheets/dashboard.css" text="Make Complaint" />
             <Button layoutX="413.0" layoutY="315.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="158.0" onAction="#openQuery" styleClass="make-query-btn" stylesheets="@stylesheets/dashboard.css" text="Make Query" />
          </children>
       </Pane>
