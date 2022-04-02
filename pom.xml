@@ -49,6 +49,11 @@
             <artifactId>javafx-graphics</artifactId>
             <version>19-ea+3</version>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-base</artifactId>
+            <version>19-ea+3</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,7 +1,6 @@
 package com.southstar.apappfe.controllers;
 
-import com.southstar.apappfe.models.Customer;
-import com.southstar.apappfe.utils.CustomerLogin;
+import com.southstar.Domain.Customer;
 import com.southstar.apappfe.utils.Validator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +15,6 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 
 public class LoginController {
 
@@ -38,11 +36,10 @@ public class LoginController {
              if(Validator.containsOnlyNumbers(id_holder)) {
 
                  System.out.println("good");
-                 CustomerLogin customerLogin = new CustomerLogin(id_holder,password_holder);
-                 Customer customer = customerLogin.login(customerLogin);
-                 System.out.println("reach");
+                 Customer customer= new Customer(id_holder,password_holder);
+                 customer = customer.login(customer);
 
-                 if(customer!=null){
+                 if(!customer.getEmailAddress().isEmpty()){
                      System.out.println("Customer Id: "+customer.getCustomerId());
                      URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/dashboard.fxml").toURI().toURL();
                      URL styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/stylesheets/dashboard.css").toURI().toURL();
@@ -53,8 +50,9 @@ public class LoginController {
                      window.setScene(HomeScene);
                      window.show();
                      }else{
-                     System.out.println("Incorrect info");
-                 }
+
+                     System.out.println("Incorrect info...Please try again");
+                     }
                  }
 
          }else{

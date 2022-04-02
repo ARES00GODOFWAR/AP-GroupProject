@@ -1,7 +1,6 @@
 package com.southstar.apappfe.utils;
 
-import com.southstar.apappfe.models.Customer;
-import javafx.scene.layout.BorderPane;
+import com.southstar.Domain.Customer;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -9,6 +8,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 
 public class Client {
+
 
     private ObjectInputStream objectInputStream;
     private static ObjectOutputStream objectOutputStream;
@@ -57,13 +57,13 @@ public class Client {
         }
 
     }
-    public void sendCustomerLoginInfo(CustomerLogin customerLogin){
-        try{
-            objectOutputStream.writeObject(customerLogin);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-    }
+//    public void sendCustomerLoginInfo(Customer customer){
+//        try{
+//            objectOutputStream.writeObject(customer);
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+//    }
     public void sendCustomer(Customer customer){
         try {
             objectOutputStream.writeObject(customer);
@@ -74,11 +74,18 @@ public class Client {
     public Object receiveResponse(){
         try{
             if(action.equals("/CustomerLogin")){
-                System.out.println("Reacher logined");
+                //add a check here to see
+               // System.out.println("Customer successfully logged in....");
                return objectInputStream.readObject();
             }
             if(action.equals("/AddCustomer")){
-                System.out.println("Customer added");
+                Boolean flag = (Boolean) objectInputStream.readObject();
+                if(flag){
+                    System.out.println("Customer added to the database.....");
+                }else{
+                    System.out.println("Customer failed to be added to the database....");
+                }
+
                 return objectInputStream.readObject();
             }
 
