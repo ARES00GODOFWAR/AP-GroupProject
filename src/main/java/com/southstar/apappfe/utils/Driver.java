@@ -9,9 +9,9 @@ public class Driver {
         Customer customer = new Customer("1901906","firstname","lastname","email","contacnt");
         client.sendAction("/AddCustomer");
         client.sendCustomer(customer);
-        Customer customerReceived = (Customer) client.receiveResponse();
+        client.receiveResponse();
         client.closeConnection();
-        System.out.println(customerReceived.toString());
+//        System.out.println(customerReceived.toString());
 
     }
 }

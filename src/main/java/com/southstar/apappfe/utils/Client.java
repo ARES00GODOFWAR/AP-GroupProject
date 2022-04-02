@@ -24,8 +24,8 @@ public class Client {
     }
     private void createConnection(){
         try{
-            socket = new Socket("127.0.0.1",2000);
-
+            socket = new Socket("127.0.0.1",8080);
+            System.out.println("here socket "+ socket);
         }catch (IOException e){
             e.printStackTrace();
 
@@ -33,8 +33,10 @@ public class Client {
     }
     private void configureStreams(){
         try{
-            objectInputStream = new ObjectInputStream(socket.getInputStream());
             objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+            objectInputStream = new ObjectInputStream(socket.getInputStream());
+
+
         }catch(IOException e){
             e.printStackTrace();
         }
