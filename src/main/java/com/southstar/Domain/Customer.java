@@ -5,9 +5,11 @@ import com.southstar.apappfe.utils.Client;
 import java.io.Serial;
 import java.io.Serializable;
 
+
 public class Customer implements Serializable {
     @Serial
     private static  final long serialVersionUID=1;
+    private static Customer customerInstance =null;
     private String customerId;
     private String password;
     private String firstname="";
@@ -16,6 +18,11 @@ public class Customer implements Serializable {
     private String contactNumber="";
 
     public Customer() {
+
+    }
+    public Customer(Customer customer) {
+        customerInstance = customer;
+
     }
 
     public Customer(String customerId, String password) {
@@ -31,6 +38,7 @@ public class Customer implements Serializable {
         this.emailAddress = emailAddress;
         this.contactNumber = contactNumber;
     }
+
 
     public String getCustomerId() {
         return customerId;
@@ -76,8 +84,19 @@ public class Customer implements Serializable {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password){this.password = password;
+    }
+
+    public static Customer getCustomerInstance(Customer customer) {
+        if(customerInstance==null){
+            customerInstance = customer;
+        }
+        return customerInstance;
+    }
+    public static Customer setNewInstance(Customer customer){
+        customerInstance =customer;
+        return customerInstance;
+
     }
 
     @Override
@@ -98,6 +117,7 @@ public class Customer implements Serializable {
         client.sendCustomer(customer);
         Customer customerReceived = (Customer) client.receiveResponse();
         client.closeConnection();
+        customerInstance = customerReceived;
         return customerReceived;
 
 

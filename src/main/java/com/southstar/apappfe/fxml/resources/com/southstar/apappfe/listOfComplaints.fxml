@@ -16,8 +16,8 @@
       <Pane prefHeight="773.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@stylesheets/dashboard.css">
          <children>
             <Button layoutY="87.0" mnemonicParsing="false" onAction="#openDashboard" prefHeight="38.0" prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Dashboard" />
-            <Button fx:id="cBtn" layoutY="135.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Complaints" />
-            <Button layoutY="181.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
+            <Button layoutY="135.0" mnemonicParsing="false"  prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Complaints" />
+            <Button layoutY="181.0" mnemonicParsing="false" onAction="#openPayments" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
          </children>
       </Pane>
       <Pane fx:id="contentPane" layoutX="200.0" prefHeight="774.0" prefWidth="772.0">
@@ -44,6 +44,7 @@
                   <Font name="Open Sans Semibold" size="16.0" />
                </font>
             </Label>
+
             <Label layoutX="43.0" layoutY="167.0" text="List of all current and past complaints.">
                <font>
                   <Font name="Open Sans" size="12.0" />
@@ -59,6 +60,7 @@
                   <DropShadow />
                </effect>
             </TableView>
+            <Button fx:id="makeComplaintButton"  onAction="#makeComplaints" layoutX="599.0" layoutY="144.0" lineSpacing="20.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="123.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Make Complaint" textFill="WHITE" />
          </children>
       </Pane>
    </children>

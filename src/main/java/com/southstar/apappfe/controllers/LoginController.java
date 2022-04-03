@@ -36,8 +36,12 @@ public class LoginController {
              if(Validator.containsOnlyNumbers(id_holder)) {
 
                  System.out.println("good");
-                 Customer customer= new Customer(id_holder,password_holder);
+                 Customer customer=  Customer.getCustomerInstance(new Customer(id_holder,password_holder));
                  customer = customer.login(customer);
+                 System.out.println(customer.toString());
+                // customer.s= Customercustomer.login(customer);
+                 //customer = Customer.getCustomerInstance(new Customer());
+
 
                  if(!customer.getEmailAddress().isEmpty()){
                      System.out.println("Customer Id: "+customer.getCustomerId());

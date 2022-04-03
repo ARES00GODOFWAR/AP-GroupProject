@@ -11,13 +11,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.southstar.apappfe.controllers.ComplaintListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.southstar.apappfe.controllers.PaymentController">
    <children>
       <Pane prefHeight="773.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@stylesheets/dashboard.css">
          <children>
             <Button layoutY="87.0" mnemonicParsing="false" onAction="#openDashboard" prefHeight="38.0" prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Dashboard" />
-            <Button layoutY="135.0" mnemonicParsing="false"  prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Complaints" />
-            <Button layoutY="181.0" mnemonicParsing="false" onAction="#openPayments" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
+            <Button layoutY="135.0" mnemonicParsing="false" onAction="#openComplaints" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/listOfPayments.css" text="Complaints" />
+            <Button layoutY="181.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/listOfPayments.css" text="Payments" />
          </children>
       </Pane>
       <Pane fx:id="contentPane" layoutX="200.0" prefHeight="774.0" prefWidth="772.0">
@@ -39,28 +39,26 @@
                </font>
             </Button>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="501.0" layoutX="22.0" layoutY="114.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="726.0" />
-            <Label layoutX="43.0" layoutY="139.0" text="List of Complaints">
+            <Label layoutX="43.0" layoutY="139.0" text="List of Payments">
                <font>
                   <Font name="Open Sans Semibold" size="16.0" />
                </font>
             </Label>
-
-            <Label layoutX="43.0" layoutY="167.0" text="List of all current and past complaints.">
+            <Label layoutX="43.0" layoutY="167.0" text="List of all current and past payments.">
                <font>
                   <Font name="Open Sans" size="12.0" />
                </font>
             </Label>
             <TableView layoutX="44.0" layoutY="211.0" prefHeight="370.0" prefWidth="682.0">
               <columns>
-                <TableColumn prefWidth="341.5999755859375" text="Complaint" />
-                <TableColumn minWidth="0.0" prefWidth="154.39996337890625" text="Response Date" />
-                  <TableColumn minWidth="0.0" prefWidth="186.39996337890625" text="Respondent" />
+                <TableColumn prefWidth="244.800048828125" text="Item" />
+                <TableColumn minWidth="0.0" prefWidth="213.5999755859375" text="Amount" />
+                  <TableColumn minWidth="0.0" prefWidth="224.800048828125" text="Payment Date" />
               </columns>
                <effect>
                   <DropShadow />
                </effect>
             </TableView>
-            <Button fx:id="makeComplaintButton"  onAction="#makeComplaints" layoutX="599.0" layoutY="144.0" lineSpacing="20.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="123.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Make Complaint" textFill="WHITE" />
          </children>
       </Pane>
    </children>

@@ -1,4 +1,5 @@
 package com.southstar.apappfe.controllers;
+import com.southstar.Domain.Customer;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,12 +16,12 @@ import java.net.URL;
 import java.util.Objects;
 
 public class DashboardController {
+
     @FXML
     private Button cBtn;
 
     @FXML
     private Pane contentPane;
-
 
     @FXML
     private void openComplaints(ActionEvent event) throws IOException {
@@ -34,6 +35,7 @@ public class DashboardController {
         URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/complaintPage.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         contentPane.getScene().setRoot(root);
+       // MakeComplaintController.populateField();
     }
 
 
@@ -41,6 +43,13 @@ public class DashboardController {
     private void openQuery(ActionEvent event) throws IOException {
 
         URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/Query.fxml").toURI().toURL();
+        Parent root = FXMLLoader.load(url);
+        contentPane.getScene().setRoot(root);
+    }
+    @FXML
+    private void openPayments(ActionEvent event) throws IOException {
+
+        URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/listOfPayments.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         contentPane.getScene().setRoot(root);
     }
