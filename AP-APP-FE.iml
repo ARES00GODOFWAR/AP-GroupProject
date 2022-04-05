@@ -42,5 +42,6 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:mac:19-ea+3" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:19-ea+3" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:mac:19-ea+3" level="project" />
+    <orderEntry type="library" name="org.openjfx:javafx-fxml:12" level="application" />
   </component>
 </module>

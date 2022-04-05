@@ -14,6 +14,7 @@
 .chat-btn{
     -fx-background-color: white;
     -fx-border-color: #334155;
+    -fx-text-fill: #334155;
     -fx-border-radius: 5;
 }
 
