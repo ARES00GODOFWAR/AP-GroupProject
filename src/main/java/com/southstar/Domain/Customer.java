@@ -4,9 +4,14 @@ import com.southstar.apappfe.utils.Client;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 
 public class Customer implements Serializable {
+
     @Serial
     private static  final long serialVersionUID=1;
     private static Customer customerInstance =null;
@@ -16,6 +21,7 @@ public class Customer implements Serializable {
     private String lastname="";
     private String emailAddress="";
     private String contactNumber="";
+    private List<Complaint> complaints;
 
     public Customer() {
 
@@ -87,6 +93,10 @@ public class Customer implements Serializable {
     public void setPassword(String password){this.password = password;
     }
 
+    public List<Complaint> getComplaints() {
+        return complaints;
+    }
+
     public static Customer getCustomerInstance(Customer customer) {
         if(customerInstance==null){
             customerInstance = customer;
@@ -119,6 +129,19 @@ public class Customer implements Serializable {
         client.closeConnection();
         customerInstance = customerReceived;
         return customerReceived;
+
+
+    }
+    public List<Complaint> getComplaints(Customer customer) {
+        Client client = new Client();
+        client.sendAction("/GetCustomerComplaint");
+        client.sendCustomer(customer);
+
+        //List<String> list = Stream.of(client.receiveResponse()).map(Complaint::toString).collect(Collectors.toList());
+        List<Complaint> complaintList = (List<Complaint>)(Object)client.receiveResponse();
+       // List<Complaint> customerReceived = new ArrayList<Complaint>((Collection<? extends Complaint>) client.receiveResponse());
+        client.closeConnection();
+        return complaintList;
 
 
     }

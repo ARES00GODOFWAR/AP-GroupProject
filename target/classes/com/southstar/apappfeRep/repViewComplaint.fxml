@@ -2,9 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,68 +11,50 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.southstar.apappfe.controllers.ComplaintListController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="773.0" prefWidth="972.0" styleClass="container" stylesheets="@stylesheets/dashboard.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.southstar.apappfe.controllers.RepViewComplaintController">
    <children>
       <Pane prefHeight="773.0" prefWidth="200.0" styleClass="sidebar" stylesheets="@stylesheets/dashboard.css">
          <children>
             <Button layoutY="87.0" mnemonicParsing="false" onAction="#openDashboard" prefHeight="38.0" prefWidth="200.0" styleClass="dashboard-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Dashboard" />
             <Button fx:id="cBtn" layoutY="135.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="complaint-sidebar-link" stylesheets="@stylesheets/complaintPage.css" text="Complaints" />
-            <Button layoutY="181.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
+            <Button layoutY="181.0" mnemonicParsing="false"  prefHeight="38.0" prefWidth="200.0" styleClass="payment-sidebar-link" stylesheets="@stylesheets/dashboard.css" text="Payments" />
          </children>
       </Pane>
       <Pane fx:id="contentPane" layoutX="200.0" prefHeight="774.0" prefWidth="772.0">
          <children>
-            <Text layoutX="23.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complaint Application Form" wrappingWidth="427.0100402832031">
+            <Text layoutX="23.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complaint Form" wrappingWidth="427.0100402832031">
                <font>
                   <Font name="Open Sans Semibold" size="30.0" />
                </font>
             </Text>
-            <Text layoutX="23.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill out the application form below to make a complaint" />
-            <TextField layoutX="23.0" layoutY="199.0" prefHeight="46.0" prefWidth="171.0" promptText="Customer ID">
+            <Text layoutX="23.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer compliant form avaialble below." />
+            <TextField fx:id="customerID" disable="true" layoutX="23.0" layoutY="199.0" prefHeight="46.0" prefWidth="171.0" promptText="Customer ID">
                <font>
                   <Font size="10.0" />
                </font>
             </TextField>
-            <TextField layoutX="216.0" layoutY="199.0" prefHeight="46.0" prefWidth="207.0" promptText="First Name">
+            <TextField fx:id="firstName" disable="true" layoutX="216.0" layoutY="199.0" prefHeight="46.0" prefWidth="207.0" promptText="First Name">
                <font>
                   <Font size="10.0" />
                </font>
             </TextField>
-            <Button layoutX="300.0" layoutY="656.0" lineSpacing="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="139.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Submit form" textFill="WHITE" />
-            <TextField layoutX="452.0" layoutY="199.0" prefHeight="46.0" prefWidth="207.0" promptText="Last Name">
+            <Button fx:id="submitForm" layoutX="300.0" layoutY="656.0" lineSpacing="20.0" onAction="#confirm" mnemonicParsing="false"  prefHeight="45.0" prefWidth="139.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Confirm" textFill="WHITE" />
+            <TextField fx:id="lastName" disable="true" layoutX="452.0" layoutY="199.0" prefHeight="46.0" prefWidth="207.0" promptText="Last Name">
                <font>
                   <Font size="10.0" />
                </font>
             </TextField>
-            <TextField layoutX="25.0" layoutY="270.0" prefHeight="46.0" prefWidth="239.0" promptText="Email Address">
+            <TextField fx:id="emailAddress" disable="true" layoutX="25.0" layoutY="270.0" prefHeight="46.0" prefWidth="239.0" promptText="Email Address">
                <font>
                   <Font size="10.0" />
                </font>
             </TextField>
-            <TextField layoutX="279.0" layoutY="270.0" prefHeight="46.0" prefWidth="182.0" promptText="Contact Number">
+            <TextField fx:id="contactNumber" disable="true" layoutX="279.0" layoutY="270.0" prefHeight="46.0" prefWidth="182.0" promptText="Contact Number">
                <font>
                   <Font size="10.0" />
                </font>
             </TextField>
-            <TextField layoutX="476.0" layoutY="270.0" prefHeight="46.0" prefWidth="182.0" promptText="Type of Issue">
-               <font>
-                  <Font size="10.0" />
-               </font>
-            </TextField>
-            <TextField layoutX="26.0" layoutY="346.0" prefHeight="46.0" prefWidth="436.0" promptText="Service  Address">
-               <font>
-                  <Font size="10.0" />
-               </font>
-               <contextMenu>
-                  <ContextMenu>
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                     </items>
-                  </ContextMenu>
-               </contextMenu>
-            </TextField>
-            <ComboBox layoutX="476.0" layoutY="346.0" prefHeight="46.0" prefWidth="182.0" promptText="Type of Service" />
-            <TextArea layoutX="25.0" layoutY="419.0" prefHeight="200.0" prefWidth="634.0" />
+            <TextArea fx:id="complaintBody" disable="true" layoutX="25.0" layoutY="345.0" prefHeight="210.0" prefWidth="634.0" promptText="Body" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" layoutX="23.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="sidebar-header" width="726.0" />
             <Label layoutX="35.0" layoutY="35.0" text="Micro-Star CableVision">
                <font>
@@ -91,6 +71,12 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <TextField fx:id="typeOfIssue" disable="true" layoutX="477.0" layoutY="270.0" prefHeight="46.0" prefWidth="182.0" promptText="Type Of Issue">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <ComboBox fx:id="assignTo" layoutX="295.0" layoutY="581.0" prefHeight="45.0" prefWidth="150.0" promptText="Assign to" />
          </children>
       </Pane>
    </children>

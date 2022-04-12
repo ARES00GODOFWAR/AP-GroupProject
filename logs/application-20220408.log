@@ -1,0 +1,6 @@
+2022-04-08 21:08:27.583 [main] INFO  com.southstar.apappfe.utils.Log - Customer added to the database.....
+2022-04-08 21:33:48.028 [JavaFX Application Thread] ERROR com.southstar.apappfe.utils.Log - java.net.ConnectException: Connection refused
+2022-04-08 23:12:00.572 [JavaFX Application Thread] ERROR com.southstar.apappfe.utils.Log - java.net.ConnectException: Connection refused
+2022-04-08 23:12:05.587 [JavaFX Application Thread] ERROR com.southstar.apappfe.utils.Log - java.net.ConnectException: Connection refused
+2022-04-08 23:17:34.434 [JavaFX Application Thread] ERROR com.southstar.apappfe.utils.Log - java.io.EOFException
+2022-04-08 23:17:35.898 [JavaFX Application Thread] ERROR com.southstar.apappfe.utils.Log - java.net.ConnectException: Connection refused

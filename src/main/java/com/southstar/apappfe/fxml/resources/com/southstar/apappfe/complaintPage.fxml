@@ -38,7 +38,7 @@
                   <Font size="10.0" />
                </font>
             </TextField>
-            <Button layoutX="300.0" layoutY="656.0" lineSpacing="20.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="139.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Submit form" textFill="WHITE" />
+            <Button fx:id="submitForm" layoutX="300.0" layoutY="656.0" lineSpacing="20.0" mnemonicParsing="false" onAction="#submitComplaint" prefHeight="45.0" prefWidth="139.0" styleClass="login-button" stylesheets="@stylesheets/login.css" text="Submit form" textFill="WHITE" />
             <TextField fx:id="lastName" disable="true" layoutX="452.0" layoutY="199.0" prefHeight="46.0" prefWidth="207.0" promptText="Last Name">
                <font>
                   <Font size="10.0" />
@@ -55,7 +55,7 @@
                </font>
             </TextField>
             <ComboBox fx:id="typeOfService" layoutX="476.0" layoutY="270.0" prefHeight="46.0" prefWidth="182.0" promptText="Type of Service" />
-            <TextArea layoutX="25.0" layoutY="345.0" prefHeight="274.0" prefWidth="634.0" />
+            <TextArea fx:id="complaintBody" layoutX="25.0" layoutY="345.0" prefHeight="274.0" prefWidth="634.0" promptText="Body" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="64.0" layoutX="23.0" layoutY="14.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="sidebar-header" width="726.0" />
             <Label layoutX="35.0" layoutY="35.0" text="Micro-Star CableVision">
                <font>
@@ -72,6 +72,7 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <Label fx:id="errorField" layoutX="35.0" layoutY="626.0" textFill="RED" />
          </children>
       </Pane>
    </children>

@@ -1,6 +1,7 @@
 package com.southstar.apappfe.controllers;
 
 import com.southstar.Domain.Customer;
+import com.southstar.Domain.Employee;
 import com.southstar.apappfe.utils.Validator;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,32 +33,46 @@ public class LoginController {
 
         String id_holder = Id.getCharacters().toString();
         String password_holder = Password.getCharacters().toString();
+        Customer customer;
+        Employee employee;
+        URL url;
+        URL styleUrl;
          if(!id_holder.isEmpty() && !password_holder.isEmpty()) {
-             if(Validator.containsOnlyNumbers(id_holder)) {
 
-                 System.out.println("good");
-                 Customer customer=  Customer.getCustomerInstance(new Customer(id_holder,password_holder));
-                 customer = customer.login(customer);
-                 System.out.println(customer.toString());
-                // customer.s= Customercustomer.login(customer);
-                 //customer = Customer.getCustomerInstance(new Customer());
+             boolean isIdValid = Validator.containsOnlyNumbers(id_holder);
+             String userType = isIdValid? Validator.determineUser(Integer.parseInt(id_holder)):"";
+             if(isIdValid && !userType.isEmpty()){
+                 if(userType.equalsIgnoreCase("Customer")){
+                     customer=  Customer.getCustomerInstance(new Customer(id_holder,password_holder));
+                     customer= customer.login(customer);
+                     url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/dashboard.fxml").toURI().toURL();
+                     styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/stylesheets/dashboard.css").toURI().toURL();
 
+                 }else if(userType.equalsIgnoreCase("Employee")){
+                     employee = Employee.getCustomerInstance(new Employee(id_holder,password_holder));
+                     employee = employee.login(employee);
+                     url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfeRep/repDashboard.fxml").toURI().toURL();
+                     styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfeRep/stylesheets/dashboard.css").toURI().toURL();
 
-                 if(!customer.getEmailAddress().isEmpty()){
-                     System.out.println("Customer Id: "+customer.getCustomerId());
-                     URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/dashboard.fxml").toURI().toURL();
-                     URL styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/stylesheets/dashboard.css").toURI().toURL();
-                     Parent HomePage = FXMLLoader.load(url);
-                     HomePage.getStylesheets().add(String.valueOf(styleUrl));
-                     Scene HomeScene = new Scene(HomePage);
-                     Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-                     window.setScene(HomeScene);
-                     window.show();
-                     }else{
+                 }else if(userType.equalsIgnoreCase("Technician")) {
+                     employee = Employee.getCustomerInstance(new Employee(id_holder,password_holder));
+                     employee = employee.login(employee);
+                     url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfeTech/techDashboard.fxml").toURI().toURL();
+                     styleUrl = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappTech/stylesheets/dashboard.css").toURI().toURL();
 
-                     System.out.println("Incorrect info...Please try again");
-                     }
+                 }else{
+                     invalidPrompt.setVisible(true);
+                     return;
+
                  }
+                 Parent HomePage = FXMLLoader.load(url);
+                 HomePage.getStylesheets().add(String.valueOf(styleUrl));
+                 Scene HomeScene = new Scene(HomePage);
+                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                 window.setScene(HomeScene);
+                 window.show();
+
+             }else { invalidPrompt.setVisible(true);}
 
          }else{
              invalidPrompt.setVisible(true);

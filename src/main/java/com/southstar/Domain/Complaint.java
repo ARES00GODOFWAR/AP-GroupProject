@@ -2,60 +2,31 @@ package com.southstar.Domain;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.lang.annotation.Repeatable;
+import java.util.Date;
 
 
 public class Complaint implements Serializable {
     @Serial
     private static  final long serialVersionUID=1;
 
-    private String customerId;
-    private String firstname;
-    private String lastname;
-    private String emailAddress;
-    private String contactNumber;
+    private int complaintId;
     private String typeOfIssue;
+    private String complaintBody;
+    private Employee employee;
+    private String response;
+    private String date;
+    private Customer customer;
+
+    public Complaint(String typeOfIssue, String complaintBody,Customer customer) {
+
+        this.typeOfIssue = typeOfIssue;
+        this.complaintBody = complaintBody;
+        this.customer = customer;
+    }
 
     public Complaint() {
-    }
 
-    public String getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getEmailAddress() {
-        return emailAddress;
-    }
-
-    public void setEmailAddress(String emailAddress) {
-        this.emailAddress = emailAddress;
-    }
-
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
     }
 
     public String getTypeOfIssue() {
@@ -64,6 +35,64 @@ public class Complaint implements Serializable {
 
     public void setTypeOfIssue(String typeOfIssue) {
         this.typeOfIssue = typeOfIssue;
+    }
+
+    public int getComplaintId() {
+        return complaintId;
+    }
+
+    public String getComplaintBody() {
+        return complaintBody;
+    }
+
+    public void setComplaintBody(String complaintBody) {
+        this.complaintBody = complaintBody;
+    }
+
+    public void setComplaintId(int complaintId) {
+        this.complaintId = complaintId;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public void setResponse(String response) {
+        this.response = response;
+    }
+
+    @Override
+    public String toString() {
+        return "Complaint{" +
+                "complaintId=" + complaintId +
+                ", typeOfIssue='" + typeOfIssue + '\'' +
+                ", complaintBody='" + complaintBody + '\'' +
+                ", customer=" + customer +
+                '}';
     }
 }
 

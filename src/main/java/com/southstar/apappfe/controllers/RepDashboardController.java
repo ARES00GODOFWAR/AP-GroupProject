@@ -20,9 +20,23 @@ public class RepDashboardController {
 
     @FXML
     private void openComplaints(ActionEvent event) throws IOException {
-        System.out.println("This works");
-        URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/complaintPage.fxml").toURI().toURL();
+        URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfeRep/repComplaintPage.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         contentPane.getScene().setRoot(root);
     }
+
+//    @FXML
+//    private void openPayments(ActionEvent event) throws IOException {
+//        URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/rep/repComplaintPage.fxml").toURI().toURL();
+//        Parent root = FXMLLoader.load(url);
+//        contentPane.getScene().setRoot(root);
+//    }
+
+//    @FXML
+//    private void openPayments(ActionEvent event) throws IOException {
+//
+//        URL url = new File("src/main/java/com/southstar/apappfe/fxml/resources/com/southstar/apappfe/rep/listOfPayments.fxml").toURI().toURL();
+//        Parent root = FXMLLoader.load(url);
+//        contentPane.getScene().setRoot(root);
+//    }
 }

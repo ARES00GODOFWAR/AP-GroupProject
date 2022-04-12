@@ -50,11 +50,11 @@
                   <Font name="Open Sans" size="12.0" />
                </font>
             </Label>
-            <TableView layoutX="44.0" layoutY="211.0" prefHeight="370.0" prefWidth="682.0">
+            <TableView fx:id="complaintTable" layoutX="44.0" layoutY="211.0" prefHeight="370.0" prefWidth="682.0">
               <columns>
-                <TableColumn prefWidth="341.5999755859375" text="Complaint" />
-                <TableColumn minWidth="0.0" prefWidth="154.39996337890625" text="Response Date" />
-                  <TableColumn minWidth="0.0" prefWidth="186.39996337890625" text="Respondent" />
+<!--                <TableColumn prefWidth="341.5999755859375" text="Complaint" />-->
+<!--                <TableColumn minWidth="0.0" prefWidth="154.39996337890625" text="Response Date" />-->
+<!--                  <TableColumn minWidth="0.0" prefWidth="186.39996337890625" text="Respondent" />-->
               </columns>
                <effect>
                   <DropShadow />
